@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+	<style>
+		section
+		{
+			line-height: 25px;
+		}
+		
+		/*default content*/
+		.dfcontent
+		{
+			color: black;
+		}
+		
+		/*background content*/
+		.bgcontent
+		{
+			color: darkviolet;
+		}
+		
+		/*reference text*/
+		.refer
+		{
+			color: crimson;
+		}
+		
+		.keycontent
+		{
+			color: dodgerblue;
+		}
+		
+	</style>
+	
+	</head>
+		
+	<body>
+		<hr/>
+		
+		<section>
+			<section class="bgcontent">
+				背景:</br>
+				1949年夏末, 哈佛大学教授Wassily Leontief正在小心地将最后一部分穿孔卡片插入大学的 MarkⅡ计算机.</br>
+				 这些卡片包含了美国经济的信息, 包括美国劳动统计局两年紧张工作所得到的总共25万多条信息.</br>
+				Leontief 把美国经济分解为500个部门, 例如煤炭工业、汽车工业、交通系统, 等等.</br>
+				 对每个部门, 他写出了一个描述该部门的产出如何分配给其他经济部门的线性方程.</br>
+				由于当时最大的计算机之一的  MarkⅡ还不能处理所得到的 包含500个未知数的500个方程的方程组, Leontief 只好把问题简化为包含42个未知数的42个方程的方程组.</br>
+				为解 Leontief 的42个方程, 编写 MarkⅡ计算机程序需要几个月的工作, 他急于知道计算机解这个问题需要多长时间.</br>
+				MarkⅡ运算了56个小时, 才得到最后的答案.</br>
+				Leontief 获得了1973年诺贝尔经济学奖, 他打开了经济数学建模的新时代的大门.</br>
+				1949年在哈佛的工作标志着应用计算机分析大规模数学模型的开始. 从那以后, 许多其他领域中的研究者应用计算机来分析数学模型.</br>
+				由于所涉及的数据数量庞大, 这些模型通常是线性的, 即它们是用线性方程组描述的.</br>
+			<section>
+				
+			<section class="refer">
+				—<引用linear algebra and its applications--David C.Lay, Steven R.Lay, Judi J.McDonald>
+			</section>
+		</section>
+		
+		</br>
+		</br>
+		
+		<section class="dfcontent">
+			struct <span class="keycontent">线性方程组</span> { n个 <span class="keycontent">线性方程</span> }; 
+			</br></br>
+			
+			<h1>1.线性方程</h1>
+			<span class="keycontent">线性方程</span>是形如 <img src="img/linear_equaltion.jpg" />的方程 </br>
+			其中x{1} x{2}...x{n}是变量,&nbsp a{1} a{2}...a{n}是系数,&nbsp a{n} 与 b 可以是<span class="keycontent">实数</span>或<span class="keycontent">复数</span>
+			&nbsp n可以是任意<span class="keycontent">正整数</span>
+			
+			</br></br>
+				
+			<img src="img/4x1-5x2+2=x1.jpg" /> <img src="img/x2=2(√6-x1)+x3.jpg"/> </br>
+			以上2个方程都是<span class="keycontent">线性方程</span>, 它们可以化简为...(习题1)
+			
+			</br></br>
+			
+			<h1>2.线性方程组</h1>
+			<span class="keycontent">线性方程组</span>是由 一个 或 几个 包含同样的x{1},x{2},x{n}的线性方程组成的, </br>
+			例如:<img src="img/2x1-x2+1.5x3=8,x1-4x3=-7.jpg"/> </br>
+			<span class="keycontent">线性方程组</span>的解是一组数(s{1}, s{2}, s{n}), 用这组数分别代替x{1}, x{2}, x{n}时所有线性方程都 两边相等 </br>
+			<span class="keycontent">方程组</span>的所由可能的解称为方程组的<span class="keycontent">解集</span> </br>
+			若两个<span class="keycontent">方程组</span>的解集相同, 这2个方程组是<span class="keycontent">等价</span>的 </br>
+			
+			</br></br>
+			
+			<h1>3.线性方程组的解</h1>
+			由一共2个变量的组成的2个线性方程, 组成的线性方程组的 求解, 与求两条二维直线的交点过程是一样的 </br>
+			由一共3个变量的组成的2个线性方程, 组成的线性方程组的 求解, 与求两条三维直线的交点过程是一样的 </br>
+			<img src="img/x1-2x2=-1,-x1+3x2=3.jpg"/> 这个方程组有<span class="keycontent">唯一解</span>, 并且是 方程1 与方程2 的两条直线的交点 </br>
+			如果两条直线平行, 对应的线性方程组无解</br>
+			也可能会有很多自变量, 那么线性方程组有无穷个解</br>
+			线性方程组的解有3种情况 </br>
+			1. 无解 </br>
+			2. 有唯一解 </br>
+			3. 有无穷多解 </br>
+			其中有<span class="keycontent">唯一解</span>, 与<span class="keycontent">有无穷多解</span>, 那样的线性方程组是<span class="keycontent">相容</span>的 </br>
+			线性方程组无解, 那样的线性方程组是<span class="keycontent">不相容</span>的
+			
+			</br></br>
+			
+			<h1>4.线性方程组的矩阵表示</h1>
+			通常会有一组简单的数字阵列来表示线性方程组</br>
+			<img src="img/x1-2x2+x3=0,2x2-8x3=8,5x1-5x3=10.jpg"/> </br>
+			将每一个<span class="keycontent">变量</span>的系数写在<span class="keycontent">对齐的一列</span>中 </br>
+			<img src="img/matrix1-2102-830-5.jpg" /> <span class="keycontent">系数矩阵</span> </br>
+			<img src="img/matrix1-21002-8850-510.jpg" /> <span class="keycontent">增广矩阵</span> </br>
+			矩阵按行和列记作<span class="keycontent">m*n矩阵</span>， m行数, n列数, 上面系数矩3x3矩阵, 增广矩阵3x4矩阵
+			
+			</br></br>
+			
+			<h1>5.解线性方程组</h1>
+			用方程组中第一个方程中x{1}的项消去其他方程中含x{1}的项, 然后用第二个方程中x{2}的项消去其他方程中含x{2}的项 </br>
+			化简线性方程组的三种基本变换 </br>
+			1. 把某个方程换成它 与 另一方程的倍数的和 </br>
+			2. 交换两个方程的位置 </br>
+			3. 把某一方程的所有项乘以一个非零常数 </br>
+			原方程<img src="img/matrix1-21002-8850-510.jpg"/> </br>
+			步骤<img src="img/matrix1-21002-8850-510的解/(1)matrix1-21002-8030-50.jpg"/> </br>
+			步骤<img src="img/matrix1-21002-8850-510的解/(2)matrix1-21002-8030-50.jpg"/> </br>
+			步骤<img src="img/matrix1-21002-8850-510的解/(3)matrix1-21002-8030-50.jpg"/> </br>
+			步骤<img src="img/matrix1-21002-8850-510的解/(4)matrix1-21002-8030-50.jpg"/> </br>
+			步骤<img src="img/matrix1-21002-8850-510的解/(5)matrix1-21002-8030-50.jpg"/> </br>
+			步骤<img src="img/matrix1-21002-8850-510的解/(6)matrix1-21002-8030-50.jpg"/> </br>
+		<section>
+	</body>
+	
+</html>
